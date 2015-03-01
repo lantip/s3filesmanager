@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseRedire
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.defaultfilters import filesizeformat
-from django.utils import simplejson
+import json
 
 from sorl.thumbnail import get_thumbnail
 
@@ -59,7 +59,7 @@ def upload_file(request):
             'modified': datetime.strftime(s3_file_obj.modified, '%Y-%m-%d %H:%M:%S')
         }
 
-        return HttpResponse(simplejson.dumps(result_dict), mimetype='application/json')
+        return HttpResponse(json.dumps(result_dict), content_typ='application/json')
     return HttpResponseNotAllowed(['POST', ])
 
 

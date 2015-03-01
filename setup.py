@@ -13,7 +13,7 @@ setup(
                       'South >= 0.7.6',
                       'django-model-utils >= 1.1.0',
                       'django-bootstrap-toolkit',
-                      'PIL == 1.1.7',
+                      'Pillow',
                       'sorl-thumbnail >= 11.12',
                       'boto >= 2.9.0',
                       'django-storages >= 1.1.8',
